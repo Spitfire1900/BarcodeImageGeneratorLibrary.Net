@@ -60,5 +60,10 @@ namespace BarcodeTestApp
             pageSetupDialog.ShowDialog();
             new PrintDialog().ShowDialog();
         }
+
+        private void btnPrintPreview_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
