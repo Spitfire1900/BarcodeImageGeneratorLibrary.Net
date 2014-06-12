@@ -59,7 +59,7 @@ namespace BarcodeTestApp
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            Print();
+            PrintSetup(GeneratePrintDocument(), true);
         }
 
         private void PrintPage(object sender, PrintPageEventArgs e)
@@ -72,28 +72,40 @@ namespace BarcodeTestApp
         private void btnPrintPreview_Click(object sender, EventArgs e)
         {
             printPreviewDiagBarcode.Document = GeneratePrintDocument();
+            printPreviewDiagBarcode.Document.PrinterSettings = PrintSetup(printPreviewDiagBarcode.Document, false);
+
             DialogResult result = printPreviewDiagBarcode.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                Print();
-            }
         }
 
         private PrintDocument GeneratePrintDocument()
         {
             PrintDocument pd = new PrintDocument();
+
+            pd.PrintPage += PrintPage;
+
+            return pd;
+        }
+        private PrintDocument GeneratePrintDocument(PrinterSettings printerSettings)
+        {
+            PrintDocument pd = new PrintDocument();
+            pd.PrinterSettings = printerSettings;
+
             pd.PrintPage += PrintPage;
 
             return pd;
         }
 
-        private void Print()
+        private PrinterSettings PrintSetup(PrintDocument printDocument, bool allowPrint)
         {
-            printDiagBarcode.Document = GeneratePrintDocument();
+            printDiagBarcode.Document = printDocument;
             DialogResult result = printDiagBarcode.ShowDialog();
 
-            if (result == DialogResult.OK)
-                GeneratePrintDocument().Print();
+            PrinterSettings ps = printDiagBarcode.PrinterSettings;
+
+            if (result == DialogResult.OK && allowPrint == true)
+                GeneratePrintDocument(ps).Print();
+            return ps;
+            
         }
     }
 }
