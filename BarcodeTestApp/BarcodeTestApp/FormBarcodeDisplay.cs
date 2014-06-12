@@ -56,7 +56,9 @@ namespace BarcodeTestApp
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            pageSetupDialog.PageSettings = new System.Drawing.Printing.PageSettings(new System.Drawing.Printing.PrinterSettings());
             pageSetupDialog.ShowDialog();
+            new PrintDialog().ShowDialog();
         }
     }
 }
