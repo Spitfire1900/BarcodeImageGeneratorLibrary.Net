@@ -102,7 +102,7 @@ namespace BarcodeTestApp
 
             PrinterSettings ps = printDiagBarcode.PrinterSettings;
 
-            if (result == DialogResult.OK)
+            if (result == DialogResult.OK && allowPrint == true)
                 GeneratePrintDocument(ps).Print();
             return ps;
             
