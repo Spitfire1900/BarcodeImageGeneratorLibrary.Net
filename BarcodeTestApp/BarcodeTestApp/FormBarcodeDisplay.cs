@@ -71,7 +71,8 @@ namespace BarcodeTestApp
 
         private void btnPrintPreview_Click(object sender, EventArgs e)
         {
-
+            printPreviewDialog.Document = Print();
+            printPreviewDialog.ShowDialog();
         }
 
         private PrintDocument Print()
