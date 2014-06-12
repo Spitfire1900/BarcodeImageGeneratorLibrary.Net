@@ -82,6 +82,16 @@ namespace BarcodeTestApp
         private PrintDocument GeneratePrintDocument()
         {
             PrintDocument pd = new PrintDocument();
+
+            pd.PrintPage += PrintPage;
+
+            return pd;
+        }
+        private PrintDocument GeneratePrintDocument(PrinterSettings printerSettings)
+        {
+            PrintDocument pd = new PrintDocument();
+            pd.PrinterSettings = printerSettings;
+
             pd.PrintPage += PrintPage;
 
             return pd;
@@ -92,8 +102,12 @@ namespace BarcodeTestApp
             printDiagBarcode.Document = GeneratePrintDocument();
             DialogResult result = printDiagBarcode.ShowDialog();
 
+            PrinterSettings ps = printDiagBarcode.PrinterSettings;
+
             if (result == DialogResult.OK)
-                GeneratePrintDocument().Print();
+                GeneratePrintDocument(ps).Print();
+
+            
         }
     }
 }
