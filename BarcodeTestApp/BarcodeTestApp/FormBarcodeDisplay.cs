@@ -59,28 +59,41 @@ namespace BarcodeTestApp
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            Print().Print();
+            Print();
         }
 
         private void PrintPage(object sender, PrintPageEventArgs e)
         {
             System.Drawing.Image img = pictureBox1.Image;
             Point loc = new Point(100, 100);
-            e.Graphics.DrawImage(img, loc);     
+            e.Graphics.DrawImage(img, loc);
         }
 
         private void btnPrintPreview_Click(object sender, EventArgs e)
         {
-            printPreviewDialog.Document = Print();
-            printPreviewDialog.ShowDialog();
+            printPreviewDiagBarcode.Document = GeneratePrintDocument();
+            DialogResult result = printPreviewDiagBarcode.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                Print();
+            }
         }
 
-        private PrintDocument Print()
+        private PrintDocument GeneratePrintDocument()
         {
             PrintDocument pd = new PrintDocument();
             pd.PrintPage += PrintPage;
 
             return pd;
+        }
+
+        private void Print()
+        {
+            printDiagBarcode.Document = GeneratePrintDocument();
+            DialogResult result = printDiagBarcode.ShowDialog();
+
+            if (result == DialogResult.OK)
+                GeneratePrintDocument().Print();
         }
     }
 }

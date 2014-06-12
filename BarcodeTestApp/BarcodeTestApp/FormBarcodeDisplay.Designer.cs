@@ -33,10 +33,10 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnEncode = new System.Windows.Forms.Button();
             this.chkBxAutoEncode = new System.Windows.Forms.CheckBox();
-            this.pageSetupDialog = new System.Windows.Forms.PageSetupDialog();
             this.btnPrint = new System.Windows.Forms.Button();
-            this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
+            this.printPreviewDiagBarcode = new System.Windows.Forms.PrintPreviewDialog();
             this.btnPrintPreview = new System.Windows.Forms.Button();
+            this.printDiagBarcode = new System.Windows.Forms.PrintDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,15 +88,15 @@
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // printPreviewDialog
+            // printPreviewDiagBarcode
             // 
-            this.printPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog.Enabled = true;
-            this.printPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog.Icon")));
-            this.printPreviewDialog.Name = "printPreviewDialog";
-            this.printPreviewDialog.Visible = false;
+            this.printPreviewDiagBarcode.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDiagBarcode.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDiagBarcode.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDiagBarcode.Enabled = true;
+            this.printPreviewDiagBarcode.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDiagBarcode.Icon")));
+            this.printPreviewDiagBarcode.Name = "printPreviewDialog";
+            this.printPreviewDiagBarcode.Visible = false;
             // 
             // btnPrintPreview
             // 
@@ -108,6 +108,10 @@
             this.btnPrintPreview.Text = "Print Preview";
             this.btnPrintPreview.UseVisualStyleBackColor = true;
             this.btnPrintPreview.Click += new System.EventHandler(this.btnPrintPreview_Click);
+            // 
+            // printDiagBarcode
+            // 
+            this.printDiagBarcode.UseEXDialog = true;
             // 
             // FormBarcodeDisplay
             // 
@@ -135,10 +139,10 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnEncode;
         private System.Windows.Forms.CheckBox chkBxAutoEncode;
-        private System.Windows.Forms.PageSetupDialog pageSetupDialog;
         private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDiagBarcode;
         private System.Windows.Forms.Button btnPrintPreview;
+        private System.Windows.Forms.PrintDialog printDiagBarcode;
 
     }
 }
