@@ -79,6 +79,7 @@
             // 
             // btnPrint
             // 
+            this.btnPrint.Enabled = false;
             this.btnPrint.Location = new System.Drawing.Point(560, 9);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(75, 23);
@@ -99,6 +100,7 @@
             // 
             // btnPrintPreview
             // 
+            this.btnPrintPreview.Enabled = false;
             this.btnPrintPreview.Location = new System.Drawing.Point(457, 9);
             this.btnPrintPreview.Name = "btnPrintPreview";
             this.btnPrintPreview.Size = new System.Drawing.Size(97, 23);
