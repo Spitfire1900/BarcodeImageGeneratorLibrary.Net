@@ -53,13 +53,13 @@ namespace BarcodeTestApp
             b.Encode(TYPE.CODE128, textBox1.Text);
 
             pictureBox1.Image = b.EncodedImage;
+            btnPrint.Enabled = true;
+            btnPrintPreview.Enabled = true;
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            PrintDocument pd = new PrintDocument();
-            pd.PrintPage += PrintPage;
-            pd.Print(); 
+            Print().Print();
         }
 
         private void PrintPage(object sender, PrintPageEventArgs e)
@@ -71,6 +71,15 @@ namespace BarcodeTestApp
 
         private void btnPrintPreview_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private PrintDocument Print()
+        {
+            PrintDocument pd = new PrintDocument();
+            pd.PrintPage += PrintPage;
+
+            return pd;
         }
     }
 }
