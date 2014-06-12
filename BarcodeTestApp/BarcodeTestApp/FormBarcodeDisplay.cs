@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 using BarcodeLib;
 using System.Drawing.Imaging;
+using System.Drawing.Printing;
 
 namespace BarcodeTestApp
 {
@@ -56,14 +57,20 @@ namespace BarcodeTestApp
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            pageSetupDialog.PageSettings = new System.Drawing.Printing.PageSettings(new System.Drawing.Printing.PrinterSettings());
-            pageSetupDialog.ShowDialog();
-            new PrintDialog().ShowDialog();
+            PrintDocument pd = new PrintDocument();
+            pd.PrintPage += PrintPage;
+            pd.Print(); 
+        }
+
+        private void PrintPage(object sender, PrintPageEventArgs e)
+        {
+            System.Drawing.Image img = pictureBox1.Image;
+            Point loc = new Point(100, 100);
+            e.Graphics.DrawImage(img, loc);     
         }
 
         private void btnPrintPreview_Click(object sender, EventArgs e)
         {
-
         }
     }
 }
