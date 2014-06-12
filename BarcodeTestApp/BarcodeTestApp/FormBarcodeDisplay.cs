@@ -53,5 +53,10 @@ namespace BarcodeTestApp
 
             pictureBox1.Image = b.EncodedImage;
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            pageSetupDialog.ShowDialog();
+        }
     }
 }

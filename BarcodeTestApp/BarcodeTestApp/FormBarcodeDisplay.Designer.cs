@@ -33,6 +33,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnEncode = new System.Windows.Forms.Button();
             this.chkBxAutoEncode = new System.Windows.Forms.CheckBox();
+            this.pageSetupDialog = new System.Windows.Forms.PageSetupDialog();
+            this.btnPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,11 +75,22 @@
             this.chkBxAutoEncode.Text = "Auto Encode";
             this.chkBxAutoEncode.UseVisualStyleBackColor = true;
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(559, 13);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(75, 23);
+            this.btnPrint.TabIndex = 4;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // FormBarcodeDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 278);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.chkBxAutoEncode);
             this.Controls.Add(this.btnEncode);
             this.Controls.Add(this.textBox1);
@@ -97,6 +110,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnEncode;
         private System.Windows.Forms.CheckBox chkBxAutoEncode;
+        private System.Windows.Forms.PageSetupDialog pageSetupDialog;
+        private System.Windows.Forms.Button btnPrint;
 
     }
 }
