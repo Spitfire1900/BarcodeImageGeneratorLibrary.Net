@@ -70,6 +70,8 @@
             // chkBxAutoEncode
             // 
             this.chkBxAutoEncode.AutoSize = true;
+            this.chkBxAutoEncode.Checked = true;
+            this.chkBxAutoEncode.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkBxAutoEncode.Location = new System.Drawing.Point(202, 15);
             this.chkBxAutoEncode.Name = "chkBxAutoEncode";
             this.chkBxAutoEncode.Size = new System.Drawing.Size(88, 17);

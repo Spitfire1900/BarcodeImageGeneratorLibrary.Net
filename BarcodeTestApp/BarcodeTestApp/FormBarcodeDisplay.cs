@@ -24,7 +24,7 @@ namespace BarcodeTestApp
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (chkBxAutoEncode.Checked == true)
+            if (chkBxAutoEncode.Checked == true && textBox1.Text != string.Empty)
                 Encode();
         }
 
