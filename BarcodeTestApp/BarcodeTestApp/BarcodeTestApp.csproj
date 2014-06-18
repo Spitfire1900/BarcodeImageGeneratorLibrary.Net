@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Barcode.cs" />
     <Compile Include="FormBarcodeDisplay.cs">
       <SubType>Form</SubType>
     </Compile>

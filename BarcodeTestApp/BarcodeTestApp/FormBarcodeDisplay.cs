@@ -35,19 +35,7 @@ namespace BarcodeTestApp
 
         protected void Encode()
         {
-            BarcodeLib.Barcode b = new BarcodeLib.Barcode
-            {
-                Alignment = AlignmentPositions.CENTER,
-                BackColor = Color.White,
-                ForeColor = Color.Black,
-                Height = 150,
-                EncodedType = TYPE.CODE128,
-                ImageFormat = ImageFormat.Png,
-                IncludeLabel = true,
-                LabelFont = new Font(new FontFamily(System.Drawing.Text.GenericFontFamilies.Serif), 10F),
-                LabelPosition = LabelPositions.TOPCENTER,
-                Width = 500
-            };
+            Barcode b = new Barcode { };
 
             b.RawData = textBox1.Text;
             b.Encode(TYPE.CODE128, textBox1.Text);
@@ -85,6 +73,7 @@ namespace BarcodeTestApp
 
             return pd;
         }
+
         private PrintDocument GeneratePrintDocument(PrinterSettings printerSettings)
         {
             PrintDocument pd = new PrintDocument();
