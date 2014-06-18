@@ -11,8 +11,6 @@ namespace BarcodeTestApp
 {
     class Barcode : BarcodeLib.Barcode
     {
-        
-
         /// <summary>
         /// Default Barcode Instance
         /// </summary>
