@@ -8,6 +8,7 @@ https://workspaces.codeproject.com/bradbarnhill/barcode-image-generation-library
 
 Following is derived from original Code Project repo:
 
+![Screenshot of the Demo application](https://raw.githubusercontent.com/Spitfire1900/BarcodeImageGenerationLibrary.Net/master/BarcodeDemo/screenshot.jpg)
 Introduction
 ----
 
@@ -71,5 +72,3 @@ This function can be used by specifying the full path (filename included) of the
 ```
 b.IncludeLabel = true;
 ```
-
-This is used to put the data encoded at the bottom of the image. If you do not set this parameter, it will just generate the barcode without the data at the bottom.
