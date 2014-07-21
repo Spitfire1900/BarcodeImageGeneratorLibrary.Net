@@ -28,7 +28,7 @@ Interleaved 2 of 5 | PostNet | UPC Supplemental 2
 UPC Supplemental 5 | Codabar |	ITF-14
 Telepen | Pharmacode |	FIM (Facing Identification Mark)
 
-** Keep in mind that some symbologies go by more than one name, so make sure the one you are using isn't listed above by a different name before contacting me to add it. If it isn't listed above and you would like me to look at adding it to this library, please post a comment below, and I will take a look at it as soon as possible. (Bugs are always a priority, so please send me bug reports.)
+** Keep in mind that some symbologies go by more than one name, so make sure the one you are using isn't listed above by a different name before contacting me to add it. If it isn't listed above and you would like me to look at adding it to this library, please submit a pull request. (Bugs are always a priority, so please send those.)
 
 Using the Code
 ----
