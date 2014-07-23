@@ -72,3 +72,4 @@ This function can be used by specifying the full path (filename included) of the
 ```
 b.IncludeLabel = true;
 ```
+This is used to put the data encoded at the bottom of the image. If you do not set this parameter, it will just generate the barcode without the data at the bottom.
