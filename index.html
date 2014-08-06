@@ -24,13 +24,12 @@
       <div id="banner">
         <span id="logo"></span>
 
-        <a href="https://github.com/Spitfire1900/BarcodeImageGeneratorLibrary.Net" class="button fork"><strong>View On GitHub</strong></a>
+        <a href="https://github.com/Spitfire1900/BarcodeImageGeneratorLibraryDotNet" class="button fork"><strong>View On GitHub</strong></a>
         <div class="downloads">
           <span>Downloads:</span>
           <ul>
-            <li><a href="https://github.com/Spitfire1900/BarcodeImageGeneratorLibrary.Net/releases/download/v1.0.0.16/BarcodeLib.dll" class="button">v1 DLL</a></li>
-            <li><a href="https://github.com/Spitfire1900/BarcodeImageGeneratorLibrary.Net/zipball/master" class="button">ZIP</a></li>
-            <li><a href="https://github.com/Spitfire1900/BarcodeImageGeneratorLibrary.Net/tarball/master" class="button">TAR</a></li>
+            <li><a href="https://github.com/Spitfire1900/BarcodeImageGeneratorLibraryDotNet/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/Spitfire1900/BarcodeImageGeneratorLibraryDotNet/tarball/master" class="button">TAR</a></li>
           </ul>
         </div>
       </div><!-- end banner -->
@@ -40,37 +39,111 @@
         <ul></ul>
       </nav>
       <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+        <h1>
+<a name="barcodeimagegenerationlibrarynet" class="anchor" href="#barcodeimagegenerationlibrarynet"><span class="octicon octicon-link"></span></a>BarcodeImageGenerationLibrary.Net</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>Generate Barcode Images for .NET.</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<p>Forked from Brad Barnhill's Barcode Image Generation Library over on Code Project.
+<a href="https://workspaces.codeproject.com/bradbarnhill/barcode-image-generation-library">https://workspaces.codeproject.com/bradbarnhill/barcode-image-generation-library</a></p>
+
+<p>Following is derived from original Code Project repo:</p>
+
+<p><img src="https://raw.githubusercontent.com/Spitfire1900/BarcodeImageGenerationLibrary.Net/master/BarcodeDemo/screenshot.jpg" alt="Screenshot of the Demo application"></p>
+
+<h2>
+<a name="introduction" class="anchor" href="#introduction"><span class="octicon octicon-link"></span></a>Introduction</h2>
+
+<p>This article and its code provides a way for developers to put barcodes into their applications. It allows for the generation of barcode images without the use of "barcode fonts". This need arose out of the necessity for one of my own projects to use barcodes and the lack of free libraries on the web to do the job.</p>
+
+<p>To give an idea of what happens in this library: it first turns the data into a series of 1s and 0s representing equal-width bars and spaces. This string of binary information is then sent to a drawing function that converts it to an image representing the desired barcode. This approach allows for one common drawing method to be used on all symbologies.</p>
+
+<h2>
+<a name="supported-encoding-types" class="anchor" href="#supported-encoding-types"><span class="octicon octicon-link"></span></a>Supported Encoding Types</h2>
+
+<table>
+<thead><tr>
+<th></th>
+<th></th>
+<th></th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Code 128</td>
+<td>Code11</td>
+<td>Code 39 (Extended / Full ASCII)</td>
+</tr>
+<tr>
+<td>Code 93</td>
+<td>EAN-8</td>
+<td>EAN-13</td>
+</tr>
+<tr>
+<td>UPC-A</td>
+<td>UPC-E   JAN-13</td>
+<td></td>
+</tr>
+<tr>
+<td>MSI</td>
+<td>ISBN</td>
+<td>Standard 2 of 5</td>
+</tr>
+<tr>
+<td>Interleaved 2 of 5</td>
+<td>PostNet</td>
+<td>UPC Supplemental 2</td>
+</tr>
+<tr>
+<td>UPC Supplemental 5</td>
+<td>Codabar</td>
+<td>ITF-14</td>
+</tr>
+<tr>
+<td>Telepen</td>
+<td>Pharmacode</td>
+<td>FIM (Facing Identification Mark)</td>
+</tr>
+</tbody>
+</table><p>** Keep in mind that some symbologies go by more than one name, so make sure the one you are using isn't listed above by a different name before contacting me to add it. If it isn't listed above and you would like me to look at adding it to this library, please submit a pull request. (Bugs are always a priority, so please send those.)</p>
+
+<h2>
+<a name="using-the-code" class="anchor" href="#using-the-code"><span class="octicon octicon-link"></span></a>Using the Code</h2>
+
+<p>The library contains a class called BarcodeLib. There are three constructors:</p>
+
+<pre><code>Barcode();
+Barcode(string);
+Barcode (string, BarcodeLib.TYPE);
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>If you decide to create an instance with parameters, the parameters are as follows: the string is the data to be encoded into the barcode, and BarcodeLib.TYPE is the symbology to encode the data with. If you do not choose to specify the data and type at the time the instance is created, you may specify them through the appropriate property later on (but before you encode).</p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<pre><code>BarCodeLib.Barcode b = new BarCodeLib.Barcode(BarCodeLib.TYPE.UPCA, 
+          "038000356216", Color.Black, Color.White, 300, 150);
+</code></pre>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>To get the image representing the data generated, you must then call one of the many Encode functions.</p>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<pre><code>public Image Encode(TYPE iType, string StringToEncode, int Width, int Height)
+public Image Encode(TYPE iType, string StringToEncode, 
+        Color ForeColor, Color BackColor, int Width, int Height)
+public Image Encode(TYPE iType, string StringToEncode, Color ForeColor, Color BackColor)
+public Image Encode(TYPE iType, string StringToEncode)
+Encode(TYPE iType)
+Encode()
+</code></pre>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>The resulting Image contains the barcode in image format. More functionality has been added, so you can save the Image once it is encoded.</p>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<pre><code>public void SaveImage(string Filename, SaveTypes FileType)
+</code></pre>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>This function can be used by specifying the full path (filename included) of the location you would like to save the image to as a string. The second parameter is an enumerator (BarcodeLib.SaveTypes) that represents the supported types (JPG, BMP, PNG, GIF, TIFF) of files you can save. Functionality has been added so that you can now set the IncludeLabel parameter to allow it to draw the data that's encoded in the barcode, below the image, as a label. Keep in mind that this will take up some of the space you specify for the size of the image.</p>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<pre><code>b.IncludeLabel = true;
+</code></pre>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>This is used to put the data encoded at the bottom of the image. If you do not set this parameter, it will just generate the barcode without the data at the bottom.</p>
       </section>
       <footer>
         <p>Project maintained by <a href="https://github.com/Spitfire1900">Spitfire1900</a></p>
