@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="Default.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="_Default" Codebehind="Default.aspx.cs" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
 <link rel="Stylesheet" type="text/css" href="stylesheet.css" />
     <title>Barcode Page</title>
     <style type="text/css">
@@ -22,11 +22,10 @@
         }
         </style>
     <script type="text/javascript" language="javascript">
-    function colorChanged(sender) 
-    {
-        sender.get_element().style.backcolor = 
-        "#" + sender.get_selectedColor();
-    }
+        function colorChanged(sender) {
+            sender.get_element().style.backcolor =
+            "#" + sender.get_selectedColor();
+        }
     </script>
 </head>
 <body>
