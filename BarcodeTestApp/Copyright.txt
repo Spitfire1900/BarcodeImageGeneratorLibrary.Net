@@ -1,0 +1,21 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+BarcodeTestApp copywrited © 2014 Kyle Gottfried. All Rights Reserved.
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2
+
+iQIcBAEBCgAGBQJV4lGWAAoJENHETqoNqhxsrSAP/i7h8aqq9m/ToKcKpZGZjkDL
+x6pUeuIoku/mdIsfvwU1sn4+dZF0tG11XeEQtcRZa4ej0vHd5rS0s5kTjK40h9fS
+QMvNNoeu67ncVsQJYnDGKsgsAfI2qd/0n5sliRJKJ97Pmvlc/+5QfAuynEe4vG6r
+K1HUltYXchIoZSC9xagPhtheF6R+rWxgTu+Y2X+akJd0r1k2pG4Koyi7AdC3AWl6
+Kl36LwM+NT8BSIUFu7mEwfypd33gE40pvDzYobfK32sURPcQSH6oBTddkTLw/tLW
+qVRh9sVvV+NsASnzztJuXMODuRYauvvdfL2Tm1wsE2XuiP4OiNUQVpqtgfdwbQBv
+Dg4aJAaU+bWtuQ1+Qq4Lc0RgIWMpixj3fEjHASkEA2C6An1rBe0dehSJcgkt8Ki0
+Pak4qhkCwg6z5qYD9xoXdA5QPRuXqbElJwXjf6ZeoullS098tBWnLi259qzvEhnC
+74qSzzT1yfg8O2IckvWX/zgeYYtJ38DD/UPG3Sz3SmUIiIKpZxetT54JLvAXT7dO
+69TizwUMQCPchtrAmYVhKnDcrvzhxlgsoMt4QUgc7w0/pXbem05gzymuCMGEr57/
+GzrUTOgneUm8/fCnbYDYPP4z0axyuAQp1JrS3Jvxlfx5kNvbo16OJTUWmVKPVpvj
+2K+GLUzQc59Dqe1YD5MK
+=2S0f
+-----END PGP SIGNATURE-----
