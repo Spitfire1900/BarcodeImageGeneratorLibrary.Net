@@ -1,0 +1,1 @@
+BarcodeDemo, BarcodeLib, BarcodeLibTest Copyright © 2007 Brad Barnhill
