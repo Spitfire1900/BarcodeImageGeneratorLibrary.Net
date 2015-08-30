@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarcodeLibTest", "BarcodeLibTest\BarcodeLibTest.csproj", "{8DB57BA1-E88C-43D9-AD0E-04BFA6B11C61}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarcodeLib", "BarcodeLib\BarcodeLib.csproj", "{F8646414-0C9C-49BB-9DA3-3923BF78A398}"
@@ -8,6 +10,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarcodeDemo", "BarcodeDemo\BarcodeDemo.csproj", "{26C2C087-1004-4498-A43A-87D841AEEAEC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarcodeTestApp", "BarcodeTestApp\BarcodeTestApp\BarcodeTestApp.csproj", "{4995A76C-C71D-48CB-B766-92825E350649}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F8646414-0C9C-49BB-9DA3-3923BF78A398} = {F8646414-0C9C-49BB-9DA3-3923BF78A398}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
